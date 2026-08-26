@@ -1,6 +1,6 @@
 // ==================== CHECKPOINT 1 - COMMENTED ====================
 // import 'package:flutter/material.dart';
-// 
+//
 // void main() {
 //   runApp(
 //     const MaterialApp(
@@ -11,7 +11,7 @@
 
 // ==================== CHECKPOINT 2 - COMMENTED ====================
 // import 'package:flutter/material.dart';
-// 
+//
 // void main() {
 //   runApp(
 //     const MaterialApp(
@@ -30,7 +30,7 @@
 
 // ==================== CHECKPOINT 3 - COMMENTED ====================
 // import 'package:flutter/material.dart';
-// 
+//
 // void main() {
 //   runApp(
 //     MaterialApp(
@@ -74,14 +74,14 @@
 
 // ==================== CHECKPOINT 4 - COMMENTED ====================
 // import 'package:flutter/material.dart';
-// 
+//
 // void main() {
 //   runApp(const MyApp());
 // }
-// 
+//
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
-// 
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -111,14 +111,14 @@
 
 // ==================== CHECKPOINT 5 - COMMENTED ====================
 // import 'package:flutter/material.dart';
-// 
+//
 // void main() {
 //   runApp(const MyApp());
 // }
-// 
+//
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});
-// 
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
@@ -128,10 +128,10 @@
 //     );
 //   }
 // }
-// 
+//
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
-// 
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
@@ -147,10 +147,10 @@
 //     );
 //   }
 // }
-// 
+//
 // class LoginPage extends StatelessWidget {
 //   const LoginPage({super.key});
-// 
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return Scaffold(
@@ -193,8 +193,26 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Abdullah Alshahrani - Home'),
+      appBar: AppBar(title: const Text('Abdullah Alshahrani - Home')),
+      drawer: Drawer(
+        child: SafeArea(
+          child: Column(
+            children: [
+              const DrawerHeader(
+                child: Center(
+                  child: Text('Demo Menu', style: TextStyle(fontSize: 24)),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
       ),
       body: Center(
         child: ElevatedButton(
@@ -202,9 +220,7 @@ class HomePage extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const LoginPage(),
-              ),
+              MaterialPageRoute(builder: (context) => const LoginPage()),
             );
           },
         ),
@@ -219,9 +235,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Page'),
-      ),
+      appBar: AppBar(title: const Text('Login Page')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Back to Home'),
